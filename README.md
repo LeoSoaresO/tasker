@@ -14,6 +14,7 @@ O projeto "Tasker" é um projeto pessoal feito em Vue 3 + Vite.
 
 - [@LeoSoaresO](https://github.com/LeoSoaresO) - Dessenvolvimento.
 - [@Lusques](https://github.com/Lusques) - Dessenvolvimento.
+- [@Mairaarquino](https://github.com/Mairaarquino) - Dessenvolvimento.
 
 
 ## License
