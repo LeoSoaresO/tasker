@@ -1,9 +1,8 @@
-
 <template>
-    <div class="card flex justify-content-center">
-        <Toast />
-        <Tree v-model:selectionKeys="selectedKey" :value="nodes" selectionMode="checkbox" class="w-full md:w-30rem"></Tree>
-    </div>
+  <div class="tree-container card flex justify-content-center">
+    <Toast />
+    <Tree v-model:selectionKeys="selectedKey" :value="nodes" selectionMode="checkbox" class="w-full md:w-30rem"></Tree>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -18,14 +17,34 @@ const selectedKey = ref(null);
 const toast = useToast();
 
 onMounted(() => {
-    NodeService.getTreeNodes().then((data) => (nodes.value = data));
+  NodeService.getTreeNodes().then((data) => (nodes.value = data));
 });
 
 const onNodeSelect = (node) => {
-    toast.add({ severity: 'success', summary: 'Node Selected', detail: node.label, life: 3000 });
+  toast.add({ severity: 'success', summary: 'Node Selected', detail: node.label, life: 3000 });
 };
 
 const onNodeUnselect = (node) => {
-    toast.add({ severity: 'success', summary: 'Node Unselected', detail: node.label, life: 3000 });
+  toast.add({ severity: 'success', summary: 'Node Unselected', detail: node.label, life: 3000 });
 };
 </script>
+
+<style lang="scss">
+.tree-container {
+  .p-tree-wrapper {
+    ul {
+      font-size: 18px;
+      font-weight: 500;
+
+      ul {
+        font-size: 14px;
+        margin-left: 16px;
+
+        .pi {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+</style>

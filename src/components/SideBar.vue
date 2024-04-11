@@ -14,6 +14,6 @@ const visible = ref(true);
         <Sidebar v-model:visible="visible" header="Sidebar">
             <Menu/>
         </Sidebar>
-        <Button icon="pi pi-arrow-right" @click="visible = true" />
+        <Button icon="pi pi-bars" @click="visible = true" />
     </div>
 </template>
